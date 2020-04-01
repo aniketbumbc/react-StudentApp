@@ -17,7 +17,7 @@ class DisplayStudent extends Component {
                               student.map(stud => {
                                     return (
 
-                                          <tbody>
+                                          <tbody key={stud.id}>
                                                 <tr key={stud.id}>
                                                       <th scope="row">{stud.id}</th>
                                                       <td>{stud.name}</td>
@@ -34,7 +34,7 @@ class DisplayStudent extends Component {
             )
       }
       render() {
-            let arrayLength = this.props.student;
+            let arrayLength = this.props.student.length;
             return (
                   <div className="title">
                         Students Infortmation      
