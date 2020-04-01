@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import  { connect } from 'react-redux';
-import DisplayStudent from '../components/DisplayStudents';
 import {bindActionCreators} from 'redux';
 import {addStudent} from '../actions/index';
 
@@ -14,15 +13,12 @@ class Registranation extends Component {
                   rollnumber: '',
                   address: ''
             }
-
-
             this.addStudent = this.addStudent.bind(this);
       }
 
 
       addStudent(event) {
             event.preventDefault();
-            debugger;
             this.state.name = this.refs.name.value;
             this.state.rollnumber = this.refs.number.value;
             this.state.address = this.refs.add.value;
@@ -32,7 +28,6 @@ class Registranation extends Component {
 
 
       render() {
-            console.log("props" , this.props);
             return (
 
                   <div className="App">
@@ -55,7 +50,6 @@ class Registranation extends Component {
                                     </Form>
                               </div>
                         </div>
-                        <DisplayStudent data={this.props}/>
                   </div>
 
 
@@ -71,11 +65,4 @@ function mapDispatchToProps(dispatch){
 return bindActionCreators({addStudent},dispatch)
 }
 
-function mapStateToProps(state){
-    return{
-          student:state
-    }
-}
-
-
-export default connect(mapStateToProps,mapDispatchToProps)(Registranation);
+export default connect(null,mapDispatchToProps)(Registranation);

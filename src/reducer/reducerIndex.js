@@ -6,7 +6,7 @@ const studentAdd = (action) => {
             name:action.name,
             rollnumber:action.rollnumber,
             address:action.address,
-            id: Math.random()
+            id: Math.floor(Math.random() * 11)
       }
 }
 
