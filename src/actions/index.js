@@ -18,7 +18,6 @@ export const deleteStudent =(id)=>{
             id:id
       }
 
-      console.log("Delete Action ", action)
       return action;
 
 }
