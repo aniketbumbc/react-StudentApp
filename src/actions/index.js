@@ -1,13 +1,24 @@
 // Action Creator function and action Object 
-import  {ADD_STUD} from '../constant/constant';
+import  {ADD_STUD, DEL_STUD} from '../constant/constant';
 
-export const addStudent = (name,rollnumber,address) =>{
+export const addStudent = (name,rollnumber,address,gender) =>{
       const action = {
             type:ADD_STUD,
             name:name,
             rollnumber:rollnumber,
-            address:address
+            address:address,
+            gender:gender
       }
-      console.log("action student" , action);
       return action; 
+}
+
+export const deleteStudent =(id)=>{
+      const action ={
+            type: DEL_STUD,
+            id:id
+      }
+
+      console.log("Delete Action ", action)
+      return action;
+
 }

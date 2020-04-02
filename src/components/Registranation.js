@@ -11,7 +11,8 @@ class Registranation extends Component {
             this.state = {
                   name: '',
                   rollnumber: '',
-                  address: ''
+                  address: '',
+                  gender:''
             }
             this.addStudent = this.addStudent.bind(this);
       }
@@ -22,8 +23,9 @@ class Registranation extends Component {
             this.state.name = this.refs.name.value;
             this.state.rollnumber = this.refs.number.value;
             this.state.address = this.refs.add.value;
+            this.state.gender = event.target.gender.value;
             event.target.reset();
-           this.props.addStudent( this.state.name, this.state.rollnumber, this.state.address);
+           this.props.addStudent(this.state.name, this.state.rollnumber, this.state.address,this.state.gender);
       }
 
 
@@ -45,6 +47,18 @@ class Registranation extends Component {
 
                                           <h2><span className="badge badge-secondary">Address</span></h2>
                                           <input className="form-control" placeholder="Add" ref="add" /> <br />
+                                      
+                                     
+                                   <input className="form-check-input" type="radio" name="gender" value="Male"/>
+                                     <label className="form-check-label" htmlFor="exampleRadios1"> Male  </label> <br/>
+                                    
+
+
+                                    <input className="form-check-input" type="radio" name="gender"  value="Female"/>
+                                     <label className="form-check-label" htmlFor="exampleRadios2"> Female </label> <br/>       
+                                                           
+                                          
+                        
                                           <Button type="submit" variant="primary" className="mr-2">Add  Student </Button>
 
                                     </Form>
